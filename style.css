@@ -61,7 +61,6 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
-    background-image: linear-gradient(to right, rgba(245, 211, 149, 0.5),rgba(241, 223, 188, 0.5));
     user-select: none;
     align-items: center;
 }
