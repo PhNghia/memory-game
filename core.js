@@ -28,15 +28,15 @@ let timeWait = 100 // this variable is time to wait for the logic execute
                    // and at tag "img" inside ".tag"
 // play button animation 
 ;(() => {
-    const homeStartElement = $('.home__start')
+    const homeStartElement = $('.start__button-container')
     const startButtonHoverElement = $('.start__button-hover')
 
     startButtonHoverElement.onmouseover = () => {
-            homeStartElement.classList.add('zoom')
+            homeStartElement.classList.add('activeHover')
     }
 
     startButtonHoverElement.onmouseout = () => {
-        homeStartElement.classList.remove('zoom')
+        homeStartElement.classList.remove('activeHover')
     }
 })()
 

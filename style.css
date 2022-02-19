@@ -50,10 +50,13 @@ html {
 
 @keyframes zoom {
     0% {
-        zoom: 1;
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
     }
     100% {
-        zoom: 1.1;
+        transform: scale(1);
     }
 }
 
@@ -87,11 +90,6 @@ body {
     }
 
     /* Home start */
-
-    .home__start.zoom {
-        animation: zoom .7s linear infinite;
-    }
-
     .home__start {
         position: absolute;
         display: flex;
@@ -145,6 +143,17 @@ body {
         animation: rotate360deg 6s linear infinite;
     }
 
+    .start__button-container.activeHover {
+        animation: zoom 1s linear infinite;
+    }
+
+    .start__button-container {
+        position: absolute;
+        display: inline-block;
+        width: 8.2rem;
+        height: 8rem;
+    }
+
     .start__button {
         position: absolute; 
         width: 8.2rem;
@@ -181,6 +190,7 @@ body {
 
     .start__button-core {
         position: absolute;
+        transform: translate(20%, 23%);
         width: 6rem;
         height: 5.8rem;
         border-radius: 100%;
@@ -197,7 +207,7 @@ body {
         border-width: 3.2rem 5.4rem;
         border-color: transparent transparent transparent var(--playShapeLine);
         z-index: 5;
-        transform: translate(3.5rem, 0.1rem);
+        transform: translate(23%, 17%);
         cursor: pointer;
     }
 
