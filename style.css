@@ -1,0 +1,533 @@
+:root {
+    --orangeButton: rgb(253,166,0);
+    --orangeButtonDark: rgb(244,117,33);
+    --orangeButtonLine: rgb(254,144,38);
+    --orangeButtonShadow: rgb(227,75,0);
+    --coreButton: rgb(100,49,0);
+    --playShapeLine: rgb(60,30,0);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Outfit', sans-serif;
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    box-sizing: inherit;
+}
+
+/* logic in js */
+#home.active {
+    display: block;
+}
+
+#playing.active {
+    display: flex;
+}
+
+/* Common attribute */
+.title-page {
+    position: relative;
+    max-width: 100%;
+    object-fit: contain;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: grab;
+}
+
+/* animation */
+@keyframes rotate360deg {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes zoom {
+    0% {
+        zoom: 1;
+    }
+    100% {
+        zoom: 1.1;
+    }
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-image: linear-gradient(to right, rgba(245, 211, 149, 0.5),rgba(241, 223, 188, 0.5));
+    user-select: none;
+    align-items: center;
+}
+
+/* Title Game */
+.title__game {
+    height: 10rem;
+}
+
+.title__game img {
+    margin-top: 2.5rem;
+    width: 60rem;
+}
+
+/* Home page */
+#home {
+    display: none;
+    position: relative;
+}
+
+    /* Home body */
+    .home__options {
+        position: relative;
+    }
+
+    /* Home start */
+
+    .home__start.zoom {
+        animation: zoom .7s linear infinite;
+    }
+
+    .home__start {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 22rem;
+        height: 22rem;
+        border-radius: 100%;
+        top: 30rem;
+        left: 50%;
+        transform: translateX(-50%);
+        overflow: hidden;
+        will-change: zoom;
+    }
+
+    .start__button-hover, .start__button-comeback {
+        position: absolute;
+        width: 8.9rem;
+        height: 9.8rem;
+        border-radius: 100%;
+        z-index: 6;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    .start__background {
+        position: absolute;
+        width: 22rem;
+        height: 22rem;
+        background-image: conic-gradient(
+            orange 00deg 10deg,   transparent 10deg 20deg, 
+            orange 20deg 30deg,   transparent 30deg 40deg, 
+            orange 40deg 50deg,   transparent 50deg 60deg,
+            orange 60deg 70deg,   transparent 70deg 80deg, 
+            orange 80deg 90deg,   transparent 90deg 100deg, 
+            orange 100deg 110deg, transparent 110deg 120deg,
+            orange 120deg 130deg, transparent 130deg 140deg, 
+            orange 140deg 150deg, transparent 150deg 160deg, 
+            orange 160deg 170deg, transparent 170deg 180deg,
+            orange 180deg 190deg, transparent 190deg 200deg, 
+            orange 200deg 210deg, transparent 210deg 220deg, 
+            orange 220deg 230deg, transparent 230deg 240deg,
+            orange 240deg 250deg, transparent 250deg 260deg, 
+            orange 260deg 270deg, transparent 270deg 280deg, 
+            orange 280deg 290deg, transparent 290deg 300deg,
+            orange 300deg 310deg, transparent 310deg 320deg,
+            orange 320deg 330deg, transparent 330deg 340deg,
+            orange 340deg 350deg, transparent 350deg 360deg
+        );
+        opacity: 0.6;
+        animation: rotate360deg 6s linear infinite;
+    }
+
+    .start__button {
+        position: absolute; 
+        width: 8.2rem;
+        height: 8rem;
+        background-color: var(--orangeButton);
+        border-radius: 100%;
+        border-bottom: 24px solid var(--orangeButtonDark);
+        z-index: 3;
+        cursor: pointer;
+    }
+
+    .start__button::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 8rem;
+        height: 7.8rem;
+        border-radius: 100%;
+        border-bottom: 2.7px solid #fff;
+        transform: rotate(145deg);
+    }
+
+    .start__button-line {
+        position: absolute;
+        width: 8.68rem;
+        height: 8.4rem;
+        background: conic-gradient(
+            var(--orangeButtonLine) 230deg, #fff, var(--orangeButtonLine) 230deg 360deg
+        );
+        border-radius: 100%;
+        z-index: 2;
+        cursor: pointer;
+    }
+
+    .start__button-core {
+        position: absolute;
+        width: 6rem;
+        height: 5.8rem;
+        border-radius: 100%;
+        background-color: var(--coreButton);
+        z-index: 4;
+        cursor: pointer;
+    }
+
+    .start__button-playshape {
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 3.2rem 5.4rem;
+        border-color: transparent transparent transparent var(--playShapeLine);
+        z-index: 5;
+        transform: translate(3.5rem, 0.1rem);
+        cursor: pointer;
+    }
+
+    .start__button-playshape::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 2.7rem 4.7rem;
+        border-color: transparent transparent transparent #fff;
+        z-index: 5;
+        transform: translate(-5.1rem, -2.8rem);
+    }
+
+    .start__button-shadow {
+        display: block;
+        position: absolute;
+        z-index: 1;
+        transform: translateY(1rem);
+        width: 8.2rem;
+        height: 8rem;
+        border-radius: 100%;
+        background-color: var(--orangeButtonShadow);
+        cursor: pointer;
+    }
+
+    /* End */
+
+/* Playing page */
+#playing {
+    margin-top: 5rem;
+    border: 1px solid #000;
+    border-radius: 6px;
+    display: none;
+    flex-direction: row;
+    width: 130rem;
+    height: 66rem;
+}
+
+/* Infomation game like point, level, time, score... */
+.infoGame {
+    width: 33rem;
+    border-right: 1px solid;
+    border-color: transparent #000;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.infoGame__level {
+    margin: 0;
+    margin-top: 4rem;
+    font-size: 4rem;
+    color: red;
+}
+
+.infoGame__turn {
+    font-size: 4rem;
+    margin-top: 6rem;
+    color: blue;
+}
+
+.infoGame__type-level {
+    font-size: 2rem;
+    padding: 6px 10px;
+    margin-top: 2rem;
+    color: red;
+    font-weight: bold;
+    border-radius: 6px;
+    border-color: rgba(0, 0, 0, 0.1);
+    text-transform: capitalize;
+}
+
+.infoGame__change-version {
+    margin-top: 4rem;
+    border: none;
+    outline: none;
+    font-size: 2rem;
+    padding: 1.5rem 3rem;
+    cursor: pointer;
+    border-radius: 6px;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #ddd;
+    transition: all .3s linear;
+}
+
+.infoGame__change-version:hover {
+    background-color: #f1f1f1;
+}
+
+
+.infoGame__getout {
+    margin-top: 4rem;
+    border: none;
+    outline: none;
+    padding: 1rem 2rem;
+    font-size: 1.7rem;
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 6px;
+    background-color: #ddd;
+    transition: all .3s linear;
+}
+
+.infoGame__getout:hover {
+    background-color: #f1f1f1;
+}
+
+/* Local game play which see tags to enjoy this moment */
+.localGame__play {
+    flex-grow: 1;
+    height: 32rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.tag {
+    position: relative;
+    border: 1px solid #000;
+    border-radius: 6px;
+    width: 10rem;
+    height: 15rem;
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(0);
+    transition: all 0.1s linear; /* this time is timeWait value to wait logic execute */
+    cursor: grab;
+    overflow: hidden;
+}
+
+.tag:active {
+    cursor: grabbing;
+}
+
+.tag img {
+    border-spacing: 0;
+    width: 4rem;
+    border-radius: 6px;
+    object-fit: contain;
+    transform: rotateY(180deg);
+    opacity: 1;
+    transition: all 0.1s linear; /* this time is timeWait value to wait logic execute */
+}
+
+.tag__background--game.close {
+    background-color:  rgba(37, 243, 10, 1);
+}
+
+.tag__background--bears.close {
+    background-color:  rgba(243, 239, 10, 1);
+}
+
+.tag__background--idol.close {
+    background-color:  rgba(169, 10, 243, 1);
+}
+
+.tag__background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border-radius: 6px;
+}
+
+/* modal when click open and close */
+@keyframes fadeOut {
+    from {
+        opacity: 0;
+        transform: translateY(-30rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0rem);
+    }
+}
+
+.modal.open {
+    display: flex;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal .container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    min-width: 60rem;
+    max-width: 70rem;
+    height: 54rem;
+    background-color: #fff;
+    animation: fadeOut 0.3s ease-in-out forwards;
+}
+
+.closeButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+.closeButton:hover {
+    background-color: #ccc;
+}
+
+/* modal body */
+.modal__body {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal__title.toggle {
+    color: rgb(250,1,0);
+    border-color: rgb(250,1,0);
+}
+
+.modal__title {
+    width: fit-content;  
+    padding: 2rem;
+    margin: 0;
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: #333;
+    border: 2px dashed #333;
+}
+
+.modal__description {
+    text-align: center;
+    font-size: 1.7rem;
+    color: #999;
+}
+
+.modal__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.modal__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 15rem;
+    height: 24rem;
+    border: 3px solid #ccc;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+
+.modal__item ~ .modal__item {
+    margin-left: 3rem;
+}
+
+.modal__item:hover {
+    border-color: rgb(250,1,0);
+}
+
+
+.modal__item:hover .modal__version-name {
+    color: rgb(250,1,0);
+}
+
+.modal__item.checked {
+    border-color: rgb(250,1,0);
+}
+
+.modal__item.checked img {
+    width: 13rem;
+}
+
+.modal__item.checked .modal__version-name {
+    color: rgb(250,1,0);
+}
+
+.modal__item img {
+    margin-top: 1.5rem;
+    width: 12rem;
+    object-fit: contain;
+    border-radius: 6px;
+}
+
+.modal__version-name {
+    margin-top: 2rem;
+    font-size: 1.8rem;
+    text-align: center;
+    transition: all .3s linear;
+}
+
+.modal__button-agree {
+    padding: 1rem 4rem;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    border-radius: 8px;
+    background-color: green;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.modal__button-agree:hover {
+    
+}
