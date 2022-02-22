@@ -292,7 +292,7 @@ body {
     padding: 1.5rem 3rem;
     cursor: pointer;
     border-radius: 6px;
-    color: #333;
+    color: blue;
     font-weight: bold;
     text-transform: uppercase;
     background-color: #ddd;
@@ -301,8 +301,8 @@ body {
 
 .infoGame__change-version:hover {
     background-color: #f1f1f1;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 }
-
 
 .infoGame__getout {
     margin-top: 4rem;
@@ -320,6 +320,7 @@ body {
 
 .infoGame__getout:hover {
     background-color: #f1f1f1;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Local game play which see tags to enjoy this moment */
