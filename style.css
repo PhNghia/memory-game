@@ -295,7 +295,7 @@ body {
     border-radius: 6px;
     color: blue;
     font-weight: bold;
-    text-transform: uppercase;
+    text-transform: capitalize;
     background-color: #ddd;
     transition: all .3s linear;
 }
@@ -455,7 +455,7 @@ body {
     padding: 2rem;
     margin: 0;
     font-size: 2rem;
-    text-transform: uppercase;
+    text-transform: capitalize;
     color: #333;
     border: 2px dashed #333;
 }
@@ -479,6 +479,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    text-transform: capitalize;
     width: 15rem;
     height: 24rem;
     border: 3px solid #ccc;
@@ -493,12 +495,7 @@ body {
 }
 
 .modal__item:hover {
-    border-color: rgb(250,1,0);
-}
-
-
-.modal__item:hover .modal__version-name {
-    color: rgb(250,1,0);
+    border-color: rgb(134, 145, 204);
 }
 
 .modal__item.checked {
@@ -518,6 +515,7 @@ body {
     width: 12rem;
     object-fit: contain;
     border-radius: 6px;
+    transition: all 0.3s ease-in-out;
 }
 
 .modal__version-name {
