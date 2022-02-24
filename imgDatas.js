@@ -10,7 +10,7 @@ export default {
     'my bears' : [
         'albedo', 'medusa', 'vanVan', 'violetEvergarden',
         'medusa3', 'diemLinhCo', 'diemLinhCoButSexyThan', 'hairVioletBear',
-        'noName2', 'noNameButPretty', 'tieuVu', 'vanNhiTinhThan'
+        'noName2', 'chuTrucThanh', 'tieuVu', 'vanNhiTinhThan'
     ],
     'idol 18+': [ 
         'eimiFukada', 'eimiFukada2', 'eimiFukada3', 'eimiFukada4',

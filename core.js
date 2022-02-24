@@ -469,7 +469,7 @@ function changeSizeTag () {
             heightTag = 15
             break
         case 4: 
-            widthTag = 11
+            widthTag = 10
             heightTag = 15.2
             break
         case 5:
