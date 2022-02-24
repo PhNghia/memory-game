@@ -366,15 +366,15 @@ body {
 }
 
 .tag__background--game.close {
-    background-color:  rgba(37, 243, 10, .1);
+    background-color:  rgba(37, 243, 10, 1);
 }
 
 .tag__background--bears.close {
-    background-color:  rgba(243, 239, 10, .1);
+    background-color:  rgba(243, 239, 10, 1);
 }
 
 .tag__background--idol.close {
-    background-color:  rgba(169, 10, 243, .1);
+    background-color:  rgba(169, 10, 243, 1);
 }
 
 .tag__background {
